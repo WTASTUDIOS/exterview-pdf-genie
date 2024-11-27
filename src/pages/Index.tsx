@@ -40,38 +40,41 @@ const Index = () => {
           
           <div className="md:col-span-2">
             <Card className="p-6 space-y-6 bg-gradient-to-r from-muted to-background">
-              <div className="flex justify-between items-center">
-                <span className="font-semibold text-lg">Recommendation</span>
-                <Badge variant="default" className="bg-green-500 hover:bg-green-600 text-white px-6 py-1 text-lg">
-                  YES
-                </Badge>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="font-semibold">Overall Score</span>
-                <div className="flex items-center space-x-2">
-                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                    <span className="text-white text-xl font-bold">85%</span>
+              <div className="flex flex-col space-y-6">
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-lg">Recommendation</span>
+                  <Badge variant="default" className="bg-green-500 hover:bg-green-600 text-white px-6 py-1 text-lg">
+                    YES
+                  </Badge>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <span className="font-semibold">Overall Score</span>
+                    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                      <span className="text-white text-xl font-bold">85%</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="font-semibold">Performance Rating</span>
-                <div className="flex space-x-1">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star
-                      key={star}
-                      className={`w-6 h-6 transition-all duration-300 ${
-                        star <= 4
-                          ? "fill-yellow-400 text-yellow-400 hover:scale-110"
-                          : "text-gray-300"
-                      }`}
-                    />
-                  ))}
+                
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold">Performance Rating</span>
+                  <div className="flex space-x-1">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        className={`w-6 h-6 transition-all duration-300 ${
+                          star <= 4
+                            ? "fill-yellow-400 text-yellow-400 hover:scale-110"
+                            : "text-gray-300"
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </Card>
           </div>
-          
         </div>
 
         <InterviewDetailsAndResources />
