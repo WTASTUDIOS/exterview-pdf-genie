@@ -1,4 +1,5 @@
 import { Link as LinkIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const InterviewDetailsAndResources = () => {
   return (
@@ -32,21 +33,24 @@ const InterviewDetailsAndResources = () => {
         {/* Resources */}
         <div className="space-y-4">
           <h4 className="font-medium text-base">Resources</h4>
-          <div className="grid gap-4">
+          <div className="grid gap-3">
             {[
               { label: "Recording", href: "#" },
               { label: "Transcript", href: "#" },
               { label: "Job Description", href: "#" },
               { label: "Resume", href: "#" },
             ].map((resource) => (
-              <a
+              <Button
                 key={resource.label}
-                href={resource.href}
-                className="flex items-center space-x-2 text-accent-foreground hover:underline"
+                variant="outline"
+                className="w-full justify-start"
+                asChild
               >
-                <LinkIcon className="w-4 h-4" />
-                <span>{resource.label}</span>
-              </a>
+                <a href={resource.href}>
+                  <LinkIcon className="w-4 h-4 mr-2" />
+                  {resource.label}
+                </a>
+              </Button>
             ))}
           </div>
         </div>
