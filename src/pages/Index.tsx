@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import SkillRatings from "@/components/SkillRatings";
+import ReportHeader from "@/components/ReportHeader";
 
 const Index = () => {
   const handleDownload = () => {
@@ -18,18 +19,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-muted p-8">
       <Card className="max-w-4xl mx-auto bg-white shadow-lg">
-        {/* Header */}
-        <div className="flex justify-between items-center p-6 border-b">
-          <div className="flex items-center space-x-4">
-            <img src="/placeholder.svg" alt="Company Logo" className="h-12" />
-            <h1 className="text-2xl font-bold text-primary">Interview Report</h1>
-          </div>
-          <div className="text-right">
-            <h2 className="font-semibold">Frontend Engineer</h2>
-            <p className="text-sm text-muted-foreground">JOB-123</p>
-          </div>
-        </div>
-
+        <ReportHeader />
+        
         {/* Candidate Section */}
         <div className="p-6 grid md:grid-cols-3 gap-6">
           <div className="text-center">
