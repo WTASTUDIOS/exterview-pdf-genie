@@ -8,11 +8,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import SkillRatings from "@/components/SkillRatings";
 
 const Index = () => {
   const handleDownload = () => {
-    // In a real application, this would trigger the PDF generation
-    // For now, we'll just show a toast
     toast.success("Report downloaded successfully!");
   };
 
@@ -153,6 +152,15 @@ const Index = () => {
                     </div>
                   </Card>
                 ))}
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="skills">
+              <AccordionTrigger className="text-lg font-semibold">
+                Skill Ratings
+              </AccordionTrigger>
+              <AccordionContent>
+                <SkillRatings />
               </AccordionContent>
             </AccordionItem>
 
