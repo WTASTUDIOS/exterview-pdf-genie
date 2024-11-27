@@ -6,7 +6,7 @@ const ReportHeader = () => {
       <div className="flex items-center space-x-4">
         <div className="flex items-center gap-3">
           <img src="/lovable-uploads/c7cca098-f1c6-4f3d-9eef-e52c2a0fc01a.png" alt="WTA Logo" className="h-12 w-12" />
-          <h1 className="text-2xl font-bold text-primary">Interview Report</h1>
+          <h1 className="text-2xl font-bold text-primary">WE THINK APP</h1>
         </div>
       </div>
       <div className="text-right">
