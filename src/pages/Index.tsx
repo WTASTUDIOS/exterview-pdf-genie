@@ -1,4 +1,4 @@
-import { Star, Link as LinkIcon, Download } from "lucide-react";
+import { Star, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import SkillRatings from "@/components/SkillRatings";
 import ReportHeader from "@/components/ReportHeader";
+import InterviewDetailsAndResources from "@/components/InterviewDetailsAndResources";
 
 const Index = () => {
   const handleDownload = () => {
@@ -57,50 +58,7 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Interview Details */}
-        <div className="p-6 border-t space-y-4">
-          <h3 className="font-semibold text-lg mb-4">Interview Details</h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <p className="text-sm text-muted-foreground">Interviewer</p>
-              <p>Sarah Smith - Lead Frontend Engineer</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Recruiter</p>
-              <p>Mike Johnson</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Duration</p>
-              <p>45-60 minutes</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Date</p>
-              <p>March 15, 2024</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Resources */}
-        <div className="p-6 border-t space-y-4">
-          <h3 className="font-semibold text-lg mb-4">Resources</h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { label: "Recording", href: "#" },
-              { label: "Transcript", href: "#" },
-              { label: "Job Description", href: "#" },
-              { label: "Resume", href: "#" },
-            ].map((resource) => (
-              <a
-                key={resource.label}
-                href={resource.href}
-                className="flex items-center space-x-2 text-accent hover:underline"
-              >
-                <LinkIcon className="w-4 h-4" />
-                <span>{resource.label}</span>
-              </a>
-            ))}
-          </div>
-        </div>
+        <InterviewDetailsAndResources />
 
         {/* Questions & Feedback */}
         <div className="p-6 border-t space-y-6">
