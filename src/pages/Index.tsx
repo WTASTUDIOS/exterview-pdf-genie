@@ -29,14 +29,15 @@ const Index = () => {
             <div className="relative w-32 h-32 mx-auto mb-4">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-light to-primary rounded-3xl shadow-lg transform rotate-3"></div>
               <img
-                src="/placeholder.svg"
-                alt="John Doe"
+                src="/lovable-uploads/77fe7891-c383-4aa6-aca0-b87d8cff6dee.png"
+                alt="Manish Surapaneni"
                 className="absolute inset-0 w-full h-full object-cover rounded-3xl transform -rotate-3 transition-transform hover:rotate-0 duration-300"
               />
             </div>
-            <h3 className="font-semibold">John Doe</h3>
-            <p className="text-sm text-muted-foreground">Frontend Developer</p>
+            <h3 className="font-semibold">Manish Surapaneni</h3>
+            <p className="text-sm text-muted-foreground">Micro Front End Architect</p>
           </div>
+          
           <div className="md:col-span-2">
             <Card className="p-6 space-y-6 bg-gradient-to-r from-muted to-background">
               <div className="flex justify-between items-center">
@@ -70,11 +71,11 @@ const Index = () => {
               </div>
             </Card>
           </div>
+          
         </div>
 
         <InterviewDetailsAndResources />
 
-        {/* Questions & Feedback */}
         <div className="p-6 border-t space-y-6">
           <h3 className="font-semibold text-lg">Questions & Feedback</h3>
           
