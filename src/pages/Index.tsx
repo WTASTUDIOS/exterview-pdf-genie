@@ -2,9 +2,17 @@ import { Star, Link as LinkIcon, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { toast } from "sonner";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Index = () => {
   const handleDownload = () => {
+    // In a real application, this would trigger the PDF generation
+    // For now, we'll just show a toast
     toast.success("Report downloaded successfully!");
   };
 
@@ -107,18 +115,86 @@ const Index = () => {
         {/* Questions & Feedback */}
         <div className="p-6 border-t space-y-6">
           <h3 className="font-semibold text-lg">Questions & Feedback</h3>
-          {[1, 2, 3].map((q) => (
-            <Card key={q} className="p-4 space-y-2">
-              <h4 className="font-semibold">Question {q}</h4>
-              <p className="text-sm text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
-              <div className="flex justify-between items-center pt-2">
-                <span className="text-sm">Score:</span>
-                <span className="font-semibold">1/1</span>
-              </div>
-            </Card>
-          ))}
+          
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="fullstack">
+              <AccordionTrigger className="text-lg font-semibold">
+                Full Stack Questions
+              </AccordionTrigger>
+              <AccordionContent className="space-y-6">
+                {[
+                  {
+                    question: "What is the difference between REST and GraphQL?",
+                    sampleAnswer: "REST is an architectural style for designing networked applications, while GraphQL is a query language for APIs that allows clients to request specific data.",
+                    actualAnswer: "Pending evaluation",
+                    score: "1/1"
+                  },
+                  {
+                    question: "Explain the concept of closures in JavaScript.",
+                    sampleAnswer: "Closures are functions that have access to the outer (enclosing) function's variables even after the outer function has completed.",
+                    actualAnswer: "Pending evaluation",
+                    score: "1/1"
+                  },
+                  // Add more questions here
+                ].map((item, index) => (
+                  <Card key={index} className="p-4 space-y-2">
+                    <h4 className="font-semibold">{item.question}</h4>
+                    <div className="space-y-2 text-sm">
+                      <p className="text-muted-foreground">
+                        <span className="font-medium">Sample Answer:</span> {item.sampleAnswer}
+                      </p>
+                      <p className="text-muted-foreground">
+                        <span className="font-medium">Actual Answer:</span> {item.actualAnswer}
+                      </p>
+                      <div className="flex justify-between items-center pt-2">
+                        <span className="text-sm">Score:</span>
+                        <span className="font-semibold">{item.score}</span>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="overall">
+              <AccordionTrigger className="text-lg font-semibold">
+                Overall Feedback
+              </AccordionTrigger>
+              <AccordionContent className="space-y-6">
+                {[
+                  {
+                    question: "How would you describe the company culture at WE THINK APP?",
+                    sampleAnswer: "At WE THINK APP, we foster a culture of innovation, collaboration, and ownership. We encourage open communication, where every team member feels heard and empowered to contribute to the company's growth.",
+                    actualAnswer: "Pending evaluation",
+                    score: "1/1"
+                  },
+                  {
+                    question: "How do you promote diversity and inclusion in your workplace?",
+                    sampleAnswer: "We actively promote diversity by hiring individuals from different backgrounds and regions, valuing diverse perspectives in decision-making.",
+                    actualAnswer: "Pending evaluation",
+                    score: "1/1"
+                  },
+                  // Add more feedback questions here
+                ].map((item, index) => (
+                  <Card key={index} className="p-4 space-y-2">
+                    <h4 className="font-semibold">{item.question}</h4>
+                    <div className="space-y-2 text-sm">
+                      <p className="text-muted-foreground">
+                        <span className="font-medium">Sample Answer:</span> {item.sampleAnswer}
+                      </p>
+                      <p className="text-muted-foreground">
+                        <span className="font-medium">Actual Answer:</span> {item.actualAnswer}
+                      </p>
+                      <div className="flex justify-between items-center pt-2">
+                        <span className="text-sm">Score:</span>
+                        <span className="font-semibold">{item.score}</span>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
 
         {/* Footer */}
