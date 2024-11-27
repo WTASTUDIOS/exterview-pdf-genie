@@ -49,11 +49,9 @@ const Index = () => {
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <span className="font-semibold">Overall Score</span>
-                    <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                      <span className="text-white text-xl font-bold">85%</span>
-                    </div>
+                  <span className="font-semibold">Overall Score</span>
+                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                    <span className="text-white text-xl font-bold">85%</span>
                   </div>
                 </div>
                 
